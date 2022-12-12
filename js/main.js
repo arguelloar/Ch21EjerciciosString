@@ -33,11 +33,11 @@ stringSubmit.addEventListener("click", function(e){
 
 
 function alrevezString(name){
-    let alrevez = "";
+    let inverted = "";
     for (let i = name.length-1; i >= 0; i--) {
-        alrevez += name.charAt(i);
+        inverted += name.charAt(i);
     }
-    return name+" => "+alrevez;
+    return name+" => "+inverted;
 }
 
 let alrevezSubmit = document.getElementById("alrevezSubmit");
@@ -49,3 +49,17 @@ alrevezSubmit.addEventListener("click", function(e){
     let resultAlrevez = document.getElementById("resultAlrevez");
     resultAlrevez.innerHTML = alrevezString(stringInput);
 })
+
+function palindromeString(name){
+    let inverted = "";
+    for (let i = name.length-1; i >= 0; i--) {
+        inverted += name.charAt(i);
+    }
+    let nameNoSpaces = name.replaceAll(" ","").toUpperCase();
+    let invertedNoSpaces = inverted.replaceAll(" ","").toUpperCase();
+    if(nameNoSpaces === invertedNoSpaces){
+        return "Es palindromo";
+    }else{
+        return "No es palindromo";
+    }
+}
