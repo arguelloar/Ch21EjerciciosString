@@ -30,3 +30,22 @@ stringSubmit.addEventListener("click", function(e){
     let result = document.getElementById("result");
     result.innerHTML = stringRepetitions(stringInput);
 })
+
+
+function alrevezString(name){
+    let alrevez = "";
+    for (let i = name.length-1; i >= 0; i--) {
+        alrevez += name.charAt(i);
+    }
+    return name+" => "+alrevez;
+}
+
+let alrevezSubmit = document.getElementById("alrevezSubmit");
+
+alrevezSubmit.addEventListener("click", function(e){
+    e.preventDefault();
+
+    let stringInput = document.getElementById("inputString").value;
+    let resultAlrevez = document.getElementById("resultAlrevez");
+    resultAlrevez.innerHTML = alrevezString(stringInput);
+})
