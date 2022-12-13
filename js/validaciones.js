@@ -11,6 +11,7 @@ btnEnviar.addEventListener("click",function(e){
     let inputEmail = document.getElementById("inputEmail");
     let inputArea = inputTextArea.value.trim().replaceAll("  ","");
     let email = inputEmail.value;
+    let checkbox = document.getElementById("flexCheckDefault");
     alerta.style.display = "none";
     alerta.innerHTML = "";
     let validos = 0;
@@ -60,5 +61,10 @@ btnEnviar.addEventListener("click",function(e){
             inputRFC.style.border = "";
                 },
         3000);
+    }
+
+    if(!checkbox.checked){
+        alerta.style.display="block";
+        alerta.innerHTML += '<br>Necesitas aceptar terminos y condiciones';
     }
 });
